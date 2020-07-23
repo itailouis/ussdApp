@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dashApp"
+    }
+  },
+  "defaultProject": "dashApp",
+  "cli": {
+    "analytics": "d485a6b7-94e9-431a-af28-9ec0dff5b7c7"
+  }
 }
