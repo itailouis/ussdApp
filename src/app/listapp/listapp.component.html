@@ -1,0 +1,160 @@
+
+    <div class="container" style="background-color: #f5f3f3;">
+
+      <p *ngFor="let alert of alerts">
+        <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+      </p>
+      <div class="title">
+        <h2>Ussd Applications</h2>
+      </div>
+      <!--  buttons -->
+      <div id="buttons" class="cd-section">
+
+        <button class="btn btn-primary btn-round" (click)="open(mymodal)">
+          <i class="material-icons">favorite</i> Add new
+        </button>  <!---->
+        <table class="table">
+
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">App Name</th>
+              <th scope="col">Local</th>
+              <th scope="col">Extenal</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let row of rows">
+              <th scope="row">{{row.ID}}</th>
+              <td>{{row.Name}}</td>
+              <td>{{row.local}}</td>
+              <td>{{row.extenal}}</td>
+              <td>
+                <div class="togglebutton">
+                  <label>
+                    <input  #saveUserNameCheckBox
+                    id="saveUserNameCheckBox" type="checkbox"  [checked]="row.status" (change)="onSaveChanged(saveUserNameCheckBox.checked)" >
+                    <span class="toggle"></span>
+                    Toggle is on
+                  </label>
+                </div>
+              </td>
+              <td>
+                <button class="btn btn-primary btn-sm">Edit<div class="ripple-container"></div></button>
+                <button class="btn btn-danger btn-sm">Delete<div class="ripple-container"></div></button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!--                 end buttons		         -->
+      <div class="space-50"></div>
+      <!--                 inputs -->
+
+      <!--                 end inputs -->
+      <div class="space-70"></div>
+      <!--                 textarea/checkbox/radio/toggle -->
+
+      <div class="space-70"></div>
+      <ng-template #mymodal let-modal>
+
+
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add new Application</h5>
+                <button type="button" class="close" data-dismiss="modal"  (click)="modal.dismiss('Cross click')" aria-label="Close">
+                  <i class="material-icons">clear</i>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form>
+
+
+                  <!-- <div class="form-group">
+                    <label for="exampleInputName2" class="bmd-label-floating">Application Name</label>
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="">
+                  </div> -->
+                  <div class="form-group bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">group</i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Application Name">
+                    </div>
+                  </div>
+
+                  <div class="form-group bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">language</i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Local URL">
+                    </div>
+                  </div>
+
+                  <div class="form-group bmd-form-group">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <i class="material-icons">language</i>
+                        </span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="External URL">
+                    </div>
+                  </div>
+
+                </form>
+                <p>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" (click)="modal.close('Save click')" class=" col-md-6 btn  btn btn-primary   ">Submit</button>
+                <!-- <button type="button" class=" col-md-6 btn btn-danger "  (click)="modal.dismiss('Cross click')" data-dismiss="modal">Close</button> -->
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--<div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+        </div> -->
+      </ng-template>
+
+
+    </div>
+
+
