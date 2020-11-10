@@ -1,5 +1,4 @@
-
-    <div class="container" style="background-color: #f5f3f3;">
+<div class="container" style="background-color: #f5f3f3;">
 
       <p *ngFor="let alert of alerts">
         <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
@@ -71,7 +70,7 @@
               </div>
               <div class="modal-body">
 
-                <form>
+                <form ngNoForm >
 
 
                   <!-- <div class="form-group">

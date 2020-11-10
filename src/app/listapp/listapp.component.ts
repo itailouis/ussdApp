@@ -59,7 +59,7 @@ export class ListappComponent implements OnInit {
   ]
 
   onSaveChanged(value:boolean){
-    this.reset()
+    //this.reset()
     console.log(value);
 }
 

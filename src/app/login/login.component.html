@@ -1,0 +1,67 @@
+
+ <div class="landing-page sidebar-collapse">
+  
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/profile_city.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="title">Your Story Starts With Us.</h1>
+          <h4>Every landing page needs a small description after the big bold title, that&apos;s why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+          <br>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn btn-danger btn-raised btn-lg">
+            <i class="fa fa-play"></i> Watch video
+          </a>
+        </div>
+		<div class="col-md-6">
+         <div class="">
+          <div class="card card-login">
+            <form class="form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="card-header card-header-primary text-center">
+                <h4 class="card-title">Login</h4>
+                
+              </div>
+              
+              <div class="card-body">
+                <div  style="height:80px;width:100%" ></div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">mail</i>
+                    </span>
+                  </div>
+                  <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-center">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+              </div>
+              <div class="footer text-center">
+			  <button [disabled]="loading" class="btn btn-primary col-md-8 btn-wd btn-lg">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                
+              </div>
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    
+  </div>
+</div>
